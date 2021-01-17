@@ -10,5 +10,5 @@ then
     exit 1
 else
     echo 'Smoke test passed!'
-    exit 0
+    exit 2
 fi

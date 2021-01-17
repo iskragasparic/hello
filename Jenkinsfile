@@ -29,7 +29,7 @@ pipeline {
         }
         stage('smoke_test') {
             steps {
-                sh './smoke_test.sh || true'
+                sh 'sudo ./smoke_test.sh || true'
                 junit allowEmptyResults: true, testResults: '**/test_results/*.xml'
             }
         }

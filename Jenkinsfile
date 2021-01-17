@@ -19,7 +19,7 @@ pipeline {
         }
         stage('publish_artifact') {
             steps {
-                junit allowEmptyResults: true, testResults: 'build/reports/**/*.xml'
+                junit allowEmptyResults: true, testResults: '**/test_results/*.xml'
             }
         }
         stage('deploy_to_staging') {

@@ -29,7 +29,7 @@ pipeline {
         }
         stage('smoke_test') {
             steps {
-                sh 'chmod +x -R $(env.WORKSPACE)'
+                sh 'chmod +x smoke_test.sh'
                 sh './smoke_test.sh || true'
                 junit allowEmptyResults: true, testResults: '**/test_results/*.xml'
             }

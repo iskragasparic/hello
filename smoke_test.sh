@@ -1,11 +1,14 @@
-#! /bin/sh
+#! /bin/bash
 
-./service1/entrypoint.py > service1_output.txt
+PYTHON /service1/entrypoint.py > service1_output.txt
 
-if [-s service1_output.txt]
+VAR=`cat service1_output.txt`
+
+if [-z "$VAR1" ]
 then
     echo 'Empty output!'
-    exit(-1)
+    exit 1
 else
     echo 'Smoke test passed!'
+    exit 0
 fi

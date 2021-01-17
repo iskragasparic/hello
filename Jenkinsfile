@@ -30,7 +30,8 @@ pipeline {
         stage('smoke_test') {
             steps {
                 sleep 60
-                sh "./smoke_test.sh"
+                sh './smoke_test.sh || true'
+                junit '**/test_results/*.xml'
             }
         }
         stage('end_to_end_test') {

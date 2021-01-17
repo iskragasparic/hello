@@ -1,6 +1,6 @@
 #! /bin/bash
 
-PYTHON /service1/entrypoint.py > service1_output.txt
+python /service1/entrypoint.py > service1_output.txt
 
 VAR=`cat service1_output.txt`
 

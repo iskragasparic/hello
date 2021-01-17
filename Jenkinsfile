@@ -7,8 +7,10 @@ pipeline {
             }
         }    
         stage('proba'){
-            sh 'docker build service1'
-            sh 'docker run service1'
+            steps{
+                sh 'docker build service1'
+                sh 'docker run service1'
+            }
         }
     }
 }

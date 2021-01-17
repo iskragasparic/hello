@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 echo 'Hello World'
-                sh 'nice'
+                sh 'python /home/hello/service1/entrypoint.py'
             }
         }    
     }

@@ -30,7 +30,7 @@ pipeline {
         stage('smoke_test') {
             steps {
                 sleep 60
-                //sh "./smoke_test.sh"
+                sh "./smoke_test.sh"
             }
         }
         stage('end_to_end_test') {

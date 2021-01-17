@@ -29,7 +29,8 @@ pipeline {
         }
         stage('smoke_test') {
             steps {
-                echo 'will be'
+                sleep 60
+                //sh "./smoke_test.sh"
             }
         }
         stage('end_to_end_test') {

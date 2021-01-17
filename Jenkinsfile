@@ -24,12 +24,12 @@ pipeline {
         }
         stage('deploy_to_staging') {
             steps {
-                
+                echo 'will be'
             }
         }
         stage('smoke_test') {
             steps {
-                
+                echo 'will be'
             }
         }
         stage('end_to_end_test') {
@@ -39,7 +39,7 @@ pipeline {
         }
         stage('deploy_to_production') {
             steps {
-
+                echo 'will be'
             }
         }    
     }

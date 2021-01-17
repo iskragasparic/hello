@@ -7,8 +7,8 @@ pipeline {
         stage('build') {
             steps {
                 echo 'Hello World'
-                sh 'docker build . -t $8080:8080/node-app:${DOCKER_TAG}'
-                sh 'docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts'
+                sh 'build . -t $8080:8080/node-app:${DOCKER_TAG}'
+                sh 'run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts'
             }
         }
         stage('unit_test') {

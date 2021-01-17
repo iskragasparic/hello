@@ -6,9 +6,10 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                //nije dovrseno
                 echo 'Hello World'
-                sh 'build . -t $8080:8080/node-app:${DOCKER_TAG}'
-                sh 'run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts'
+                //sh 'docker build . -t $8080:8080/node-app:${DOCKER_TAG}'
+                //sh 'docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts'
             }
         }
         stage('unit_test') {
@@ -28,7 +29,7 @@ pipeline {
         }
         stage('deploy_to_staging') {
             steps {
-                echo 'will be'
+                echo 'to be added'
             }
         }
         stage('smoke_test') {
@@ -45,7 +46,7 @@ pipeline {
         }
         stage('deploy_to_production') {
             steps {
-                echo 'will be'
+                echo 'to be added'
             }
         }    
     }

@@ -1,10 +1,14 @@
 pipeline {
     agent any
+    environment{
+        DOCKER_TAG = getDockerTag()
+    }
     stages {
         stage('build') {
             steps {
                 echo 'Hello World'
-                //sh 'python /home/hello/service1/entrypoint.py'
+                sh 'docker build . -t $8080:8080/node-app:${DOCKER_TAG}'
+                sh 'docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts'
             }
         }
         stage('unit_test') {
@@ -45,4 +49,10 @@ pipeline {
             }
         }    
     }
+}
+
+
+def getDockerTag(){
+    def tag  = sh script: 'git rev-parse HEAD', returnStdout: true
+    return tag
 }

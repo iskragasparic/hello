@@ -4,13 +4,8 @@ pipeline {
         stage('build') {
             steps {
                 echo 'Hello World'
+                sh 'node --version'
             }
         }    
-        stage('proba'){
-            steps{
-                sh 'docker build service1'
-                sh 'docker run service1'
-            }
-        }
     }
 }
